@@ -12,10 +12,26 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
+
+
+## URL patterns in my project
+
+HOME-URL ::   http://127.0.0.1:8000/
+ADMIN-INTERFACE :: http://127.0.0.1:8000/admin
+
+APP1 landing page :: http://127.0.0.1:8000/app1
+
+
+
 """
+
+
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('myadmin/', admin.site.urls),
+    path('myapp1/', include("app1.urls"))
 ]
